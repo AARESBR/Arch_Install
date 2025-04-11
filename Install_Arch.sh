@@ -10,8 +10,8 @@ set -euo pipefail
 # === VARIÁVEIS ===
 HOSTNAME="archlinux"
 TAMANHO_EFI="512M"
-TAMANHO_RAIZ="40G"
-TAMANHO_SWAP="8G"
+TAMANHO_RAIZ="10G"
+TAMANHO_SWAP="2G"
 PACOTES_ADICIONAIS=(vim htop btrfs-progs networkmanager grub efibootmgr)
 
 # === FUNÇÕES ===
