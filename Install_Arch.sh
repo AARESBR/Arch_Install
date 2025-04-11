@@ -12,7 +12,7 @@ HOSTNAME="archlinux"
 TAMANHO_EFI="512M"
 TAMANHO_RAIZ="10G"
 TAMANHO_SWAP="2G"
-PACOTES_ADICIONAIS=(vim htop btrfs-progs networkmanager grub efibootmgr)
+PACOTES_ADICIONAIS=(btrfs-progs networkmanager grub efibootmgr htop vim micro git curl)
 
 # === FUNÇÕES ===
 erro() { echo -e "\e[31m[ERRO]\e[m $1"; exit 1; }
@@ -42,7 +42,7 @@ mkswap ${DISCO}3 && swapon ${DISCO}3
 # === SUBVOLUMES BTRFS ===
 mount ${DISCO}2 /mnt
 for s in @ @home @var @opt @tmp; do btrfs subvolume create /mnt/$s; done
-umount /mnt
+umount /mntt 
 
 mount -o noatime,compress=zstd,subvol=@ ${DISCO}2 /mnt
 mkdir -p /mnt/{boot/efi,home,var,opt,tmp}
